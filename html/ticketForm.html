@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head> 
+	<meta charset="utf-8">
+	<title>Identifier Request / Feedback senden</title>
+	</head>
+		<body>
+			<h1> Identifier Request / Feedback senden</h1>
+			<h3>Art des Tickets:</h3>
+				<form>
+					<input type="radio" id="r1" name="TicketForm" value="IdentReq">
+						<label for="r1">Identifier Request</label>
+					<input type="radio" id="r2" name="TicketForm" value="Feedback">
+						<label for="r2">Feedback</label>
+				</form>
+			<br>
+			<p>Falls Identifier Request, bitte Parameter angeben:
+				<br><br>
+				<textarea name="parameter" style="width:200px; height:120px;" placeholder="Hier bitte Parameter eingeben:"></textarea>
+			</p>
+			<br>
+			<p>Feedback/Sonstige Kommentare:
+				<br><br>
+					<textarea name="Feedback" style="width:200px; height:140px;" placeholder="Hier bitte Feedback bzw. sonstige Kommentare eingeben:"></textarea>
+			</p><br>
+			<button type="submit" name="action" value="absenden">Absenden</button>
+			
+			<br><br><br>
+			<ul>
+				<li><a href="../index.html">Zurück zur Startseite</a></li>
+				<li>Ausloggen</li>
+			</ul>
+		</body>
+</html>
