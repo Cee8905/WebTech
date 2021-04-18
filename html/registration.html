@@ -10,34 +10,47 @@
 		<h1>Registration page</h1>
 		
 		<form action="suchServlet" method="post">
-		<label for="e">E-Mail:</label>
-		<input type="text" id="e" name="email">
 		
+		<div>
+		<label for="email">E-Mail:</label>
+		<input type="text" id="email" name="email">
+		</div>
 		
-		<label for="un">Username:</label>
-		<input type="text" id="un" name="username">
+		<div>
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username">
+		</div>
 		
+		<div>
 		<label for="pw">Passwort:</label>
 		<input type="password" id="pw" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 		<p>The password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+		</div>
 		
-		<label for="dep">Departement:</label>
-		<input type="text" id="dep" name="departement">
+		<div>
+		<label for="departement">Departement:</label>
+		<input type="text" id="departement" name="departement">
+		</div>
 		
-		
+		<div>
 		<p>Role:</p>
-		<label for="ad">Admin:</label>
-		<input type="radio" id="ad" name="role" value="admin">
+		<label for="admin">Admin:</label>
+		<input type="radio" id="admin" name="role" value="admin">
 		<label for="user">User:</label>
 		<input type="radio" id="user" name="role" value="user">
+		</div>
 		
-		
-		
-		<button type="submit" name="action" value="submit">Submit</button>
+		<div>
+		<button type="submit" name="submit" value="submit">Submit</button>
+		</div>
 		</form>
 		
-		<a href="login.html">You have an accout? Login</a>
+		<div>
+		<a href="login.html">You have an account? Login</a>
+		</div>
+		<div>
 		<a href="../index.html">Go back to Homepage</a>
+		</div>
 	
 
 	</body>
