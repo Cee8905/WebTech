@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Sabine Ramp">
+		<title>Login</title>
+	</head>
+	<body>
+		<h1>Login</h1>
+		<form action="loginServlet" method="post">
+			<div>
+			<label for="username">Username:</label>
+			<input type="text" name="username" placeholder="Enter Username" required>
+			</div>
+			<br>
+			<div>
+			<label for="pw">Passwort:</label>
+			<input type="password" name="password" placeholder="Enter Password" required>
+			</div>
+			<br>
+			<div>
+				<label>
+					<input type="checkbox" checked="checked" name="remember"> Remember me
+				</label>
+			</div>
+			<br>
+			<div>
+				<button type="submit">Login</button>
+				<button type="button" class="cancelbtn">Cancel</button>
+			</div>
+			<br>
+			<div>
+			<label>You don't have an account? <a href="login.html">Register here.</a></label>
+			</div>
+			<div>
+			<a href="../index.html">Go back to the main page.</a>
+			</div>
+		</form>
+	</body>
+</html>
