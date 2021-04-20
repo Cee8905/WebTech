@@ -1,16 +1,32 @@
 <!doctype html>
 <html>
 	<head> 
-	<meta charset="utf-8">
-	<title>Homepage Identifier Verwaltung</title>
+		<meta charset="utf-8">
+		<meta name="author" content="Qiankai Lei">
+		<title>Homepage Identifier Verwaltung</title>
 	</head>
-		<body>
+	<body>
 		<h1> Homepage Generierung und Verwaltung von Bus-Identifiern</h1>
 		<p> Hier können Sie Ihre eigenen Identifier anlegen, verwalten und löschen.</p>
+		
 		<ul>
 			<li><a href="./html/login.html">Zum Login</a></li>
 			<li><a href="./html/registration.html">Zur Registrierung</a></li>
 			<li><a href="./html/ticketForm.html">Ticket anlegen (Identifier Request / Feedback)</a></li>
 		</ul>
-		</body>
+		<br>
+		<h2>Suche Bus-Identifier nach Kriterien:</h2>
+			<label for="krit">Kriterium:</label>
+			<select name="kriterium" id="krit">
+				<option value="All">Alle</option>
+				<option value="BusID">Bus-ID</option>
+				<option value="Bus-Name">Bus-Name</option>
+				<option value="KompID">Komponenten-ID</option>
+			</select>
+			<label>&nbsp;&nbsp;</label>
+		<label for="suchwort" >Suchwort:</label>
+			<input type="text" id="suchwort" name="suchwort" placeholder="Suche nach...">
+			<label>&nbsp;</label>
+		<button type="submit" name="action" value="Suchen">Suchen</button>
+	</body>
 </html>
