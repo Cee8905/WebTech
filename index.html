@@ -3,30 +3,30 @@
 	<head> 
 		<meta charset="utf-8">
 		<meta name="author" content="Qiankai Lei">
-		<title>Homepage Identifier Verwaltung</title>
+		<title>Homepage Identifier Management</title>
 	</head>
 	<body>
-		<h1> Homepage Generierung und Verwaltung von Bus-Identifiern</h1>
-		<p> Hier können Sie Ihre eigenen Identifier anlegen, verwalten und löschen.</p>
+		<h1> Homepage Generating and Managing of Bus Identifiers</h1>
+		<p>This is a website for generating, managing and deleting your own identifiers.</p>
 		
 		<ul>
-			<li><a href="./html/login.html">Zum Login</a></li>
-			<li><a href="./html/registration.html">Zur Registrierung</a></li>
-			<li><a href="./html/ticketForm.html">Ticket anlegen (Identifier Request / Feedback)</a></li>
+			<li><a href="./html/login.html">Go to Login</a></li>
+			<li><a href="./html/registration.html">Create a new account</a></li>
+			<li><a href="./html/ticketForm.html">Create a ticket (Identifier Request / Feedback)</a></li>
 		</ul>
 		<br>
-		<h2>Suche Bus-Identifier nach Kriterien:</h2>
-			<label for="krit">Kriterium:</label>
-			<select name="kriterium" id="krit">
-				<option value="All">Alle</option>
+		<h2>Search Bus Identifier after criteria:</h2>
+			<label for="crit">Criteria:</label>
+			<select name="criteria" id="crit">
+				<option value="All">All</option>
 				<option value="BusID">Bus-ID</option>
 				<option value="Bus-Name">Bus-Name</option>
-				<option value="KompID">Komponenten-ID</option>
+				<option value="CompID">Component-ID</option>
 			</select>
 			<label>&nbsp;&nbsp;</label>
-		<label for="suchwort" >Suchwort:</label>
-			<input type="text" id="suchwort" name="suchwort" placeholder="Suche nach...">
+		<label for="search" >Search for:</label>
+			<input type="text" id="search" name="search" placeholder="...">
 			<label>&nbsp;</label>
-		<button type="submit" name="action" value="Suchen">Suchen</button>
+		<button type="submit" name="action" value="search">Search</button>
 	</body>
 </html>
