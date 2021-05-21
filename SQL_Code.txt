@@ -1,0 +1,67 @@
+CREATE TABLE user (
+    username VARCHAR(10) PRIMARY KEY,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    departement VARCHAR(50) NOT NULL,
+    isadmin BOOLEAN NOT NULL     
+); 
+
+CREATE TABLE ticket(
+ ticket_id int PRIMARY KEY AUTO_INCREMENT,
+ username VARCHAR(10),
+ ticket_type VARCHAR(50),
+ message VARCHAR(300),
+ FOREIGN KEY (username) REFERENCES user(username)
+ ON DELETE SET NULL           
+);
+
+
+CREATE TABLE bus (
+bus_id INT AUTO_INCREMENT PRIMARY KEY,
+     bus_nr INT NOT NULL,
+     bus_name VARCHAR(20) NOT NULL,
+     bus_description VARCHAR(100) not NULL, 
+     requestor VARCHAR(10),
+     FOREIGN KEY(requestor) REFERENCES user(username) ON DELETE NO ACTION
+);
+
+
+CREATE TABLE Component (
+	comp_id int PRIMARY KEY AUTO_INCREMENT,
+	comp_name varchar (30) NOT NULL,
+	comp_description varchar(50) NOT NULL,
+	bus_id int,
+	comp_type VARCHAR(50), 
+	comp_unit VARCHAR(50),
+	comp_value VARCHAR(50),
+	requestor VARCHAR(10), 
+	
+FOREIGN KEY(requestor) REFERENCES user(username) 
+	ON DELETE NO ACTION,
+	FOREIGN KEY(bus_id) REFERENCES bus(bus_id) 
+	ON DELETE NO ACTION);
+
+
+INSERT INTO user(username, email, password, departement, isadmin) VALUES ("cab8905", "caro123@brun.de", "123456", "S/123", True);
+INSERT INTO user(username, email, password, departement, isadmin) VALUES ("qil762","qiankai@lei.de", "123456", "S/122", True);
+INSERT INTO user(username, email, password, departement, isadmin) VALUES ("sar345","sab@ine.de", "123456", "S/124", True);
+
+
+INSERT INTO ticket(username, ticket_type, message) VALUES("cab8905", 'high', 'Mein D Zugriff funktioniert nicht');
+INSERT INTO ticket(username, ticket_type, message) VALUES("qil762", 'low', 'Collegue x lost their password');
+INSERT INTO ticket(username, ticket_type, message) VALUES("sar345", 'middle', 'cant create a new bus');
+
+
+INSERT INTO bus(bus_nr, bus_name, bus_description, requestor) VALUES(10, "CAN Highspeed", "CAN Highspeed for fast transmission", "cab8905");
+INSERT INTO bus(bus_nr, bus_name, bus_description, requestor) VALUES(15, "Ethernet 1", "Our base Ethernetbus", "cab8905");
+INSERT INTO bus(bus_nr, bus_name, bus_description, requestor) VALUES(399, "LIN 1", "A simple LIN bus to connect slaves", "sar345");
+
+INSERT INTO component (comp_name, comp_description, bus_id, comp_type, comp_unit, comp_value, requestor)
+VALUES("Testcomponent", "this is a great component", 1, "type123", "unit456", "value789", "cab8905");
+
+
+INSERT INTO component (comp_name, comp_description, bus_id, comp_type, comp_unit, comp_value, requestor)
+VALUES("Component453", "this is a bad component",2 ,"type12321", "unit12312", "value56765", "qil762");
+
+INSERT INTO component (comp_name, comp_description, bus_id, comp_type, comp_unit, comp_value, requestor)
+VALUES("Testcomponent", "component234", 3,"type67867", "unit12134", "value4567456", "sar345");
