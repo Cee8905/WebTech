@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-	<meta charset="utf-8">
-	<meta name="author" content="Caroline Brun">
-		<title>Register</title>
-		</head>
-		
-	<body>
+	<meta charset="utf-8" name="author" content="Caroline Brun">
+	<title>Register</title>
+	</head>
 
-		<h1>Registration page</h1>
-		
-		<form action="suchServlet" method="post">
-		
-		<div>
-		<label for="email">E-Mail:</label>
-		<input type="text" id="email" name="email">
-		</div>
-		
-		<div>
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username">
-		</div>
-		
-		<div>
-		<label for="pw">Passwort:</label>
-		<input type="password" id="pw" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-		<p>The password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</p>
-		</div>
-		
-		<div>
-		<label for="departement">Departement:</label>
-		<input type="text" id="departement" name="departement">
-		</div>
-		
-		<div>
-		<p>Role:</p>
-		<label for="admin">Admin:</label>
-		<input type="radio" id="admin" name="role" value="admin">
-		<label for="user">User:</label>
-		<input type="radio" id="user" name="role" value="user">
-		</div>
-		
-		<div>
-		<button type="submit" name="submit" value="submit">Submit</button>
-		</div>
-		</form>
-		
-		<div>
+
+<body>
+<h1>Registration page</h1>
+
+	<form method="post" action="../registrationservlet" accept-charset="utf-8">
+			<h3>Registration-Formula</h3>
+			<div>
+				<label for="email">E-Mail:</label> <input type="text" id="email"
+					name="email">
+			</div>
+
+			<div>
+				<label for="username">Username:</label> 
+				<input type="text" id="username" name="username">
+			</div>
+
+			<div>
+				<label for="pw">Passwort:</label> 
+				<input type="password" id="pw" name="password" required>
+			</div>
+
+
+			<div>
+				<label for="departement">Departement:</label> 
+				<input type="text" id="departement" name="departement">
+			</div>
+
+			<div>
+				<p>Role:</p>
+				<label for="admin">Admin:</label> 
+				<input type="radio" id="admin" name="role" value="admin"> 
+				<label for="user">User:</label>
+				<input type="radio" id="user" name="role" value="user">
+			</div>
+
+			<div>
+				<button type="submit" name="submit" value="submit">Submit</button>
+			</div>
+
+	</form>
+
+	<div>
 		<a href="login.html">You have an account? Login</a>
-		</div>
-		<div>
+	</div>
+	<div>
 		<a href="../index.html">Go back to Homepage</a>
-		</div>
-	
-
-	</body>
+	</div>
+</body>
 </html>
