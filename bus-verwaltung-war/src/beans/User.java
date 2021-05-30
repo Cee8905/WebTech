@@ -4,6 +4,14 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 	private static final long serialVersionUID=1L;
+	private String username; 
+	private String email; 
+	private String password; 
+	private String departement; 
+	private Boolean isadmin;
+	private Integer userId;
+	private Boolean verified;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -34,16 +42,17 @@ public class User implements Serializable {
 	public void setIsadmin(Boolean isadmin) {
 		this.isadmin = isadmin;
 	}
-	private String username; 
-	private String email; 
-	private String password; 
-	private String departement; 
-	private Boolean isadmin;
-	
-		
-
-
-	
-	
+	/*public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer i) {
+		this.userId = i;
+	}*/
+	public Boolean getVerified() {
+		return verified;
+	}
+	public void setVerified(Boolean verified) {
+		this.verified = verified;
+	}
 
 }

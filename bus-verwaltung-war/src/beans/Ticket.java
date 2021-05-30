@@ -1,4 +1,4 @@
-package edu;
+package beans;
 
 import java.io.Serializable;
 
@@ -8,7 +8,14 @@ public class Ticket implements Serializable {
 	private String 	category;
 	private String 	parameters;
 	private String 	fb_oc;
+	private Long ticket_id;
 	
+	public Long getTicket_id() {
+		return ticket_id;
+	}
+	public void setTicket_id(Long ticket_id) {
+		this.ticket_id = ticket_id;
+	}
 	public String getCategory() {
 		return category;
 	}

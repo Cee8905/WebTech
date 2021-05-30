@@ -1,4 +1,4 @@
-package edu;
+package servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,20 +6,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import edu.thi.demo.Ticket;
+import beans.Ticket;
 
 /**
  * Servlet implementation class CreateTicketServlet
@@ -30,29 +25,6 @@ public class CreateTicketServlet extends HttpServlet {
 	
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		Ticket form = new Ticket();
-		form.setCategory(request.getParameter("category"));
-		form.setParameters(request.getParameter("parameters"));
-		form.setFb_oc(request.getParameter("fb_oc"));
-		
-		// DB-Zugriff
-		persist(form);
-		
-		// Scope "Request"
-		request.setAttribute("form", form);
-		
-		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ticketoutput.jsp");
-		dispatcher.forward(request, response);
-		
-	}
 	
 	private void persist(Ticket form) throws ServletException {
 		// DB-Zugriff
@@ -80,12 +52,30 @@ public class CreateTicketServlet extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		request.setCharacterEncoding("UTF-8");
+		Ticket form = new Ticket();
+		form.setCategory(request.getParameter("category"));
+		form.setParameters(request.getParameter("parameters"));
+		form.setFb_oc(request.getParameter("fb_oc"));
+		
+		// DB-Zugriff
+		persist(form);
+		
+		// Scope "Session"
+		HttpSession session = request.getSession();
+		session.setAttribute("form", form);
+		
+		// Weiterleiten an JSP
+		response.sendRedirect("html/registration.jsp");
+		
+		// Test: Option forward
+		//final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ticketoutput.jsp");
+		//dispatcher.forward(request, response);
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
 	}
 
 }

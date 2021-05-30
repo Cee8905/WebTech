@@ -1,4 +1,4 @@
-package edu;
+package beans;
 
 import java.io.Serializable;
 
