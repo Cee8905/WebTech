@@ -5,10 +5,10 @@ import java.io.Serializable;
 public class Ticket implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private Long ticket_id;
 	private String 	category;
 	private String 	parameters;
 	private String 	fb_oc;
-	private Long ticket_id;
 	
 	public Long getTicket_id() {
 		return ticket_id;

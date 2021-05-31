@@ -6,16 +6,16 @@ import java.io.Serializable;
 public class BusBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	private Integer busId;
+	private Long busId;
 	private Integer busNr;
-	private String busName;
-	private String busDescription;
+	private String bus_name;
+	private String bus_description;
 	private String requestor;
 	
-	public Integer getBusId() {
+	public Long getBusId() {
 		return busId;
 	}
-	public void setBusId(Integer busId) {
+	public void setBusId(Long busId) {
 		this.busId = busId;
 	}
 	public Integer getBusNr() {
@@ -24,17 +24,17 @@ public class BusBean implements Serializable{
 	public void setBusNr(Integer busNr) {
 		this.busNr = busNr;
 	}
-	public String getBusName() {
-		return busName;
+	public String getBus_name() {
+		return bus_name;
 	}
-	public void setBusName(String busName) {
-		this.busName = busName;
+	public void setBus_name(String bus_name) {
+		this.bus_name = bus_name;
 	}
-	public String getBusDescription() {
-		return busDescription;
+	public String getBus_description() {
+		return bus_description;
 	}
-	public void setBusDescription(String busDescription) {
-		this.busDescription = busDescription;
+	public void setBus_description(String bus_description) {
+		this.bus_description = bus_description;
 	}
 	public String getRequestor() {
 		return requestor;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Qiankai Lei">
+		<title>Bus creation</title>
+	</head>
+	<body>
+		<header>
+			<h1>Create a new bus:</h1>
+		</header>
+		<main>
+			<form id="createbus" action="../createbusservlet" method="post" accept-charset="utf-8">
+				<div>
+				<label for="busNr">Bus number: </label>
+				<input type="number" id="busNr" name="busNr" placeholder="Enter Bus number.." required>
+				</div>
+				<br>
+				<div>
+				<label for="bus_name">Bus name: </label>
+				<input type="text" id="bus_name" name="bus_name" placeholder="Enter Bus name.." required>
+				</div>
+				<br>
+				<div>
+				<label for="bus_desc">Bus description: </label><br><br>
+				<textarea name="bus_desc" style="width:200px; height:120px;" placeholder="Please describe bus..."></textarea>
+				</div>
+				<br>
+				<br>
+				<div>
+					<button type="submit">Create</button>
+					<button type="reset" name="reset" value="reset">Reset</button>
+				</div>
+			</form>
+		</main>
+		<br>
+		<nav>
+			<div>
+			<label>You don't have an account? <a href="registration.html">Register here.</a></label>
+			</div>
+			<div>
+			<a href="../index.html">Go back to the main page.</a>
+			</div>
+		</nav>	
+	</body>
+</html>
