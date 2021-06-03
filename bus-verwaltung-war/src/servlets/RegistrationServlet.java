@@ -54,7 +54,8 @@ public class RegistrationServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
 		User user = new User();
 		user.setUsername(request.getParameter("username"));
 		user.setPassword(request.getParameter("password"));
