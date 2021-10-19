@@ -1,0 +1,24 @@
+<%--author: Caroline --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bus Administration System</title>
+</head>
+	<body>
+		<header>
+		<nav>
+			<c:choose>
+			<c:when test="${empty user}">
+				<a href="../registrationservlet">Sign up</a>
+				<a href="../signinservlet">Log in</a>
+				<!-- <a href="../dispatcherservlet?lang=en">English</a> -->
+			</c:when>
+			<c:otherwise>
+				<a href="logout.jsp">Log out</a>
+			</c:otherwise>
+			</c:choose>
+		</nav>
+		</header>

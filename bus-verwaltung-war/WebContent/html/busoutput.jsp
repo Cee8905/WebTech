@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" errorPage="errorOutput.jsp"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Bus creation confirmation</title>
+		<base href="${pageContext.request.requestURI}" />
 	</head>
 	<body>
 		<h1>New bus has been successfully created!</h1>
@@ -12,4 +13,4 @@
 		<br><b>Bus name:  ${form.bus_name}</b>
 		<br><b>Bus description: ${form.bus_description}</b>
 	</body>
-</html>
+<%@ include file="../jspf/footer.jspf"%>
