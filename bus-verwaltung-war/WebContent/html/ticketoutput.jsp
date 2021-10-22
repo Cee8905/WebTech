@@ -10,6 +10,7 @@
 		<h1>Your ticket was submitted successfully!</h1>
 		<h3>Your Ticket:</h3>
 		<b>Category: ${form.category}</b>
+		<br><b>Priority: ${form.priority}</b>
 		<br><b>Parameters: ${form.parameters}</b>
-		<br><b>Feedback / other comments: ${form.fb_oc}</b>
+		<br><b>Message: ${form.message}</b>
 <%@ include file="../jspf/footer.jspf"%>
