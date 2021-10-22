@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import edu.thi.demo.BusBean;
+import beans.BusBean;
 
 /**
  * Servlet implementation class CreateTicketServlet
@@ -39,8 +39,8 @@ public class CreateBusServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		BusBean form = new BusBean();
 		form.setBusNr(Integer.valueOf(request.getParameter("busNr")));
-		form.setBus_name(request.getParameter("bus_name"));
-		form.setBus_description(request.getParameter("bus_desc"));
+		form.setBusName(request.getParameter("busName"));
+		form.setBusDescription(request.getParameter("busDescription"));
 		
 		// DB-Zugriff
 		persist(form);
@@ -63,13 +63,13 @@ public class CreateBusServlet extends HttpServlet {
 					"INSERT INTO bus (bus_nr,bus_name,bus_description) VALUES (?,?,?)", 
 					generatedKeys)){
 
-			// Zugriff über Klasse java.sql.PreparedStatement
+			// Zugriff Ã¼ber Klasse java.sql.PreparedStatement
 			pstmt.setInt(1, form.getBusNr());
-			pstmt.setString(2, form.getBus_name());
-			pstmt.setString(3, form.getBus_description());
+			pstmt.setString(2, form.getBusName());
+			pstmt.setString(3, form.getBusDescription());
 			pstmt.executeUpdate();
 			
-			// Generierten Schlüssel auslesen
+			// Generierten SchlÃ¼ssel auslesen
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				while (rs.next()) {
 					form.setBusId(rs.getLong(1));
