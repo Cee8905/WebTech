@@ -10,7 +10,7 @@
 		<h3>Bus properties:</h3>
 		<b>Bus ID: ${form.busId}</b>
 		<br><b>Bus number: ${form.busNr}</b>
-		<br><b>Bus name:  ${form.bus_name}</b>
-		<br><b>Bus description: ${form.bus_description}</b>
+		<br><b>Bus name:  ${form.busName}</b>
+		<br><b>Bus description: ${form.busDescription}</b>
 	</body>
 <%@ include file="../jspf/footer.jspf"%>

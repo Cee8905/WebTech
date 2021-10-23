@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import edu.thi.demo.Component;
+import beans.Component;
 
 /**
  * Servlet implementation class CreateTicketServlet
@@ -65,7 +65,7 @@ public class CreateCompServlet extends HttpServlet {
 					"INSERT INTO component (comp_name,comp_description,comp_type,comp_unit,comp_value) VALUES (?,?,?,?,?)", 
 					generatedKeys)){
 
-			// Zugriff über Klasse java.sql.PreparedStatement
+			// Zugriff Ã¼ber Klasse java.sql.PreparedStatement
 			pstmt.setString(1, form.getCompName());
 			pstmt.setString(2, form.getCompDesc());
 			pstmt.setString(3, form.getComp_type());
@@ -73,7 +73,7 @@ public class CreateCompServlet extends HttpServlet {
 			pstmt.setString(5, form.getComp_value());
 			pstmt.executeUpdate();
 			
-			// Generierten Schlüssel auslesen
+			// Generierten SchlÃ¼ssel auslesen
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				while (rs.next()) {
 					form.setCompId(rs.getLong(1));

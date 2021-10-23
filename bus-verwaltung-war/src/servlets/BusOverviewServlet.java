@@ -39,7 +39,7 @@ public class BusOverviewServlet extends HttpServlet {
 			ResultSet r = s.executeQuery("SELECT * from bus")){
 			while(r != null && r.next()) {
 				BusBean b = new BusBean();
-				Integer id = Integer.valueOf(r.getInt("bus_id"));
+				Long id = Long.valueOf(r.getInt("bus_id"));
 				b.setBusId(id);
 				
 				Integer nr = Integer.valueOf(r.getInt("bus_nr"));
