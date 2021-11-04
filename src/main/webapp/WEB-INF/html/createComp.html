@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Qiankai Lei">
+		<title>Component creation</title>
+	</head>
+	<body>
+		<header>
+			<h1>Create a new component:</h1>
+		</header>
+		<main>
+			<form id="createcomp" action="../createcompservlet" method="post" accept-charset="utf-8">
+				<div>
+				<label for="compName">Component name: </label>
+				<input type="text" id="compName" name="compName" placeholder="Enter Component name.." required>
+				</div>
+				<br>
+				<div>
+				<label for="compDesc">Component description: </label><br><br>
+				<textarea name="compDesc" style="width:200px; height:100px;" placeholder="Please describe component..."></textarea>
+				</div>
+				<br>
+				<div>
+				<label for="comp_type">Component type: </label>
+				<input type="text" id="comp_type" name="comp_type" placeholder="Enter Component type.." required>
+				</div>
+				<br>
+				<div>
+				<label for="comp_unit">Component unit: </label>
+				<input type="text" id="comp_unit" name="comp_unit" placeholder="Enter Component unit.." required>
+				</div>
+				<br>
+				<div>
+				<label for="comp_value">Component value: </label>
+				<input type="text" id="comp_value" name="comp_value" placeholder="Enter Component value.." required>
+				</div>
+				<br>
+				<br>
+				<div>
+					<button type="submit">Create</button>
+					<button type="reset" name="reset" value="reset">Reset</button>
+				</div>
+			</form>
+		</main>
+		<br>
+		<nav>
+			<div>
+			<label>You don't have an account? <a href="registration.html">Register here.</a></label>
+			</div>
+			<div>
+			<a href="../index.html">Go back to the main page.</a>
+			</div>
+		</nav>	
+	</body>
+</html>

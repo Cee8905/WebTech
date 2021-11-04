@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<meta charset="utf-8" name="author" content="Caroline Brun">
+	<title>Register</title>
+	</head>
+
+
+<body>
+<h1>Registration page</h1>
+
+	<form method="post" action="../registrationservlet" accept-charset="utf-8">
+			<h3>Registration-Formula</h3>
+			<div>
+				<label for="email">E-Mail:</label> <input type="text" id="email"
+					name="email">
+			</div>
+
+			<div>
+				<!-- Limit username size to the max size in the DB -->
+				<label for="username">Username:</label> 
+				<input type="text" id="username" name="username">
+			</div>
+
+			<div>
+				<label for="pw">Passwort:</label> 
+				<!-- Add regex function to block passwords -->
+				<input type="password" id="pw" name="password" required>
+			</div>
+
+
+			<div>
+				<label for="departement">Departement:</label> 
+				<input type="text" id="departement" name="departement">
+			</div>
+
+<!-- 			<div>
+				<p>Role:</p>
+				<label for="admin">Admin:</label> 
+				<input type="radio" id="admin" name="role" value="admin"> 
+				<label for="user">User:</label>
+				<input type="radio" id="user" name="role" value="user">
+			</div>
+-->
+
+			<div>
+				<button type="submit" name="submit" value="submit">Submit</button>
+			</div>
+
+	</form>
+
+	<div>
+		<a href="login.html">You have an account? Login</a>
+	</div>
+	<div>
+		<a href="../index.html">Go back to Homepage</a>
+	</div>
+</body>
+</html>
