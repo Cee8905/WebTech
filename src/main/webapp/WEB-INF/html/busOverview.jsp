@@ -7,7 +7,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<base href="${pageContext.request.requestURI}"/>
 		<meta name="author" content="Sabine Ramp">
-		<!--Border attribute has to be removed-->
+		<link rel="stylesheet" href="../css/overview.css">
 		<title>Bus Overview</title>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 		<main>
 			<section>
 				<p>Find an overview of a the currently used busses on this page.</p>
-				<table border="1">
+				<table class="overview">
 					<tr>
 						<th>Identifier</th>
 						<th>Name</th>
