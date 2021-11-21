@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import beans.BusBean;
+import beans.Bus;
 
 /**
- * Servlet implementation class CreateTicketServlet
+ * Servlet implementation class CreateBusServlet
  */
 @WebServlet("/createbusservlet")
 public class CreateBusServlet extends HttpServlet {
@@ -37,10 +37,10 @@ public class CreateBusServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		BusBean form = new BusBean();
+		Bus form = new Bus();
 		form.setBusNr(Integer.valueOf(request.getParameter("busNr")));
-		form.setBusName(request.getParameter("bus_name"));
-		form.setBusDescription(request.getParameter("bus_desc"));
+		form.setBusName(request.getParameter("busName"));
+		form.setBusDescription(request.getParameter("busDescription"));
 		
 		// DB-Zugriff
 		persist(form);
@@ -54,7 +54,7 @@ public class CreateBusServlet extends HttpServlet {
 		
 	}
 	
-	private void persist(BusBean form) throws ServletException {
+	private void persist(Bus form) throws ServletException {
 		// DB-Zugriff
 		String[] generatedKeys = new String[] {"bus_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
 		
@@ -63,16 +63,16 @@ public class CreateBusServlet extends HttpServlet {
 					"INSERT INTO bus (bus_nr,bus_name,bus_description) VALUES (?,?,?)", 
 					generatedKeys)){
 
-			// Zugriff über Klasse java.sql.PreparedStatement
+			// Zugriff Ã¼ber Klasse java.sql.PreparedStatement
 			pstmt.setInt(1, form.getBusNr());
 			pstmt.setString(2, form.getBusName());
 			pstmt.setString(3, form.getBusDescription());
 			pstmt.executeUpdate();
 			
-			// Generierten Schlüssel auslesen
+			// Generierten SchlÃ¼ssel auslesen
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				while (rs.next()) {
-					form.setBusId(rs.getInt(1));
+					form.setBusId(rs.getLong(1));
 				}
 			}
 		} catch (Exception ex) {
