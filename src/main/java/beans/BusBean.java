@@ -3,21 +3,19 @@ package beans;
 import java.io.Serializable;
 
 // author: Sabine Ramp
-public class BusBean implements Serializable{
+public class Bus implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	private Integer busId;
+	private Long busId;
 	private Integer busNr;
 	private String busName;
 	private String busDescription;
 	private String requestor;
 	
-	public BusBean() {}
-	
-	public Integer getBusId() {
+	public Long getBusId() {
 		return busId;
 	}
-	public void setBusId(Integer busId) {
+	public void setBusId(Long busId) {
 		this.busId = busId;
 	}
 	public Integer getBusNr() {
@@ -29,14 +27,14 @@ public class BusBean implements Serializable{
 	public String getBusName() {
 		return busName;
 	}
-	public void setBusName(String bus_name) {
+	public void setBusName(String busName) {
 		this.busName = busName;
 	}
 	public String getBusDescription() {
 		return busDescription;
 	}
-	public void setBusDescription(String bus_description) {
-		this.busDescription = bus_description;
+	public void setBusDescription(String busDescription) {
+		this.busDescription = busDescription;
 	}
 	public String getRequestor() {
 		return requestor;
