@@ -16,3 +16,4 @@
 		<br><b>Component value: ${form.comp_value}</b>
 	</body>
 <%@ include file="../jspf/footer.jspf"%>
+</html>
