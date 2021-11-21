@@ -22,25 +22,27 @@ import beans.Ticket;
 @WebServlet("/createticketservlet")
 public class CreateTicketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
+	
+	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-
+	
 	private void persist(Ticket form) throws ServletException {
-// DB-Zugriff
-		String[] generatedKeys = new String[] { "ticket_id" };
-// Name der Spalte(n), die automatisch generiert wird(werden)
+		// DB-Zugriff
+		String[] generatedKeys = new String[] {"ticket_id"};	// Name der Spalte(n), die automatisch generiert wird(werden)
+		
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO ticket (ticket_type,message,category,parameters) VALUES (?,?,?,?)",
-						generatedKeys)) {
+			PreparedStatement pstmt = con.prepareStatement(
+					"INSERT INTO ticket (ticket_type,message,category,parameters) VALUES (?,?,?,?)", 
+					generatedKeys)){
 
-// Zugriff über Klasse java.sql.PreparedStatement
+			// Zugriff Ã¼ber Klasse java.sql.PreparedStatement
 			pstmt.setString(1, form.getPriority());
 			pstmt.setString(2, form.getMessage());
 			pstmt.setString(3, form.getCategory());
 			pstmt.setString(4, form.getParameters());
 			pstmt.executeUpdate();
-// Generierten Schlüssel auslesen
+			
+			// Generierten SchlÃ¼ssel auslesen
 			try (ResultSet rs = pstmt.getGeneratedKeys()) {
 				while (rs.next()) {
 					form.setTicket_id(rs.getLong(1));
@@ -51,29 +53,30 @@ public class CreateTicketServlet extends HttpServlet {
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		request.setCharacterEncoding("UTF-8");
 		Ticket form = new Ticket();
 		form.setPriority(request.getParameter("priority"));
 		form.setMessage(request.getParameter("message"));
 		form.setCategory(request.getParameter("category"));
 		form.setParameters(request.getParameter("parameters"));
-// DB-Zugriff
+		
+		// DB-Zugriff
 		persist(form);
-// Scope "Session"
+		
+		// Scope "Session"
 		HttpSession session = request.getSession();
 		session.setAttribute("form", form);
-// Weiterleiten an JSP
+		
+		// Weiterleiten an JSP
 		response.sendRedirect("html/ticketoutput.jsp");
-// Test: Option forward
-//final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ticketoutput.jsp");
-//dispatcher.forward(request, response);
+		
+		// Test: Option forward
+		//final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ticketoutput.jsp");
+		//dispatcher.forward(request, response);
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
