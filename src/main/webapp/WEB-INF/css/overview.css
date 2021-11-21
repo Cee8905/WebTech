@@ -1,0 +1,26 @@
+/* author: Sabine Ramp */
+
+table.overview {
+	width: 80%;
+}
+
+table.overview td{
+	padding: 5px 10px;
+	border-left: 1px dotted #F4EBE8;
+}
+
+table.overview tr:nth-child(odd){
+	color: #CCA870;
+}
+
+table.overview th {
+  border-bottom: 2px solid #CCA870;
+  font-weight: bold;
+  padding: 5px 10px;
+  text.align: center;
+}
+
+table.overview tr :hover {
+	background-color: #2D4479;
+	font-weight: bold;
+}
