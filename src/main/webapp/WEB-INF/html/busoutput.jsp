@@ -14,3 +14,4 @@
 		<br><b>Bus description: ${form.bus_description}</b>
 	</body>
 <%@ include file="../jspf/footer.jspf"%>
+</html>
