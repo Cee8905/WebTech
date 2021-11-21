@@ -13,3 +13,4 @@
 		<br><b>Parameters: ${form.parameters}</b>
 		<br><b>Feedback / other comments: ${form.fb_oc}</b>
 <%@ include file="../jspf/footer.jspf"%>
+</html>
